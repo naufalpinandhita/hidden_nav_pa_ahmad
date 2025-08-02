@@ -10,21 +10,33 @@
 </head>
 
 <body>
-    <!-- Hidden Navigationnya yak -->
-    <button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
-        ☰
-    </button>
-    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!-- Hidden Navigationnya yak -->
+            <button class="btn btn-outline-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
+                ☰ Menu
+            </button>
+            <div class="collapse navbar-collapse justify-content-center">
+                <div class="navbar-nav">
+                    <a href="#" class="nav-link active" aria-current="page">Beranda</a>
+                    <a href="#" class="nav-link">Tentang</a>
+                    <a href="#" class="nav-link">Kontak</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+   
     <!-- Konten Sidebar -->
     <div class="offcanvas offcanvas-start" id="offcanvasNav">
         <div class="offcanvas-header">
-            <button class="btn btn-secondary" data-bs-dismiss="offcanvas">☰</button>
+            <div class="offcanvas-title"><h5>Menu</h5></div>
+            <button class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body">
-            <ul>
-                <li>Hibban</li>
-                <li>Galas</li>
-                <li>Pinan</li>
+            <ul class="list-group">
+                <a href="#" class="list-group-item list-group-item-action active">Beranda</a>
+                <a href="#" class="list-group-item list-group-item-action">Tentang</a>
+                <a href="#" class="list-group-item list-group-item-action">Kontak</a>
             </ul>
         </div>
     </div>
@@ -34,3 +46,4 @@
 </body>
 
 </html>
+
