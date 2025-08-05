@@ -8,12 +8,78 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
+    <style>
+        .bedrock {
+            background-image: url('grass.jpg');
+            background-repeat: repeat;
+            background-size: 64px 64px;
+            /* dadike 64 nek meh pas satu blok, Bedrock 128px gak keliatan pecah*/
+            background-position: center;
+            text-shadow: 1px 1px 2px #000;
+            margin-top: 20px;
+            height: 64px;
+        }
+
+        .bedrock small {
+            color: #ffffff;
+            font-size: 23px;
+        }
+
+        .navbar-toggler:focus,
+        .navbar-toggler:active {
+            outline: 1px solid;
+            box-shadow: none;
+        }
+
+        .hover-scale {
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+    </style>
+
 </head>
 
+
 <body class="d-flex flex-column min-vh-100 bg-dark text-white">
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top shadow-lg  ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="minecraft-logo-1027-removebg-preview.png" alt="Minecraft" style="height: 40px;">
+            </a>
+            <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation" id="navToggleBtn">
+                <span id="navToggleIcon"><img src="chestclose.png" alt="▼" style="width: auto; height: 32px;"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#download">Download</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#signin">Sign In</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <!-- Konten Sidebar -->
     <aside class="offcanvas offcanvas-start bg-dark text-white" id="offcanvasNav">
         <div class="offcanvas-header d-flex justify-content-between border-bottom border-white">
@@ -24,10 +90,15 @@
         </div>
         <div class="offcanvas-body">
             <div class="nav flex-column">
-                <a href="index.html" class="nav-link text-white active d-flex align-items-center px-3 py-2"><i class="bi bi-house me-2"></i> Beranda</a>
-                <a href="#" class="nav-link text-white d-flex align-items-center px-3 py-2"><i class="bi bi-exclamation-circle-fill me-2"></i>Tentang</a>
-                <a href="#" class="nav-link text-white d-flex align-items-center px-3 py-2"><i class="bi bi-telephone-fill me-2"></i>Kontak</a>
-                <a href="https://www.minecraft.net/en-us" class="nav-link text-white d-flex align-items-center px-3 py-2"><i class="bi bi-globe me-2"></i>Website</a>
+                <a href="index.html" class="nav-link text-white active d-flex align-items-center px-3 py-2"><i
+                        class="bi bi-house me-2"></i> Beranda</a>
+                <a href="#" class="nav-link text-white d-flex align-items-center px-3 py-2"><i
+                        class="bi bi-exclamation-circle-fill me-2"></i>Tentang</a>
+                <a href="#" class="nav-link text-white d-flex align-items-center px-3 py-2"><i
+                        class="bi bi-telephone-fill me-2"></i>Kontak</a>
+                <a href="https://www.minecraft.net/en-us"
+                    class="nav-link text-white d-flex align-items-center px-3 py-2"><i
+                        class="bi bi-globe me-2"></i>Website</a>
             </div>
         </div>
         </div>
@@ -37,15 +108,19 @@
         <div class="row g-2">
             <div class="col-1 mt-4 text-center">
                 <!-- Hidden Navigationnya yak -->
-            <button class="btn btn-success text-light" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNav">
-                ☰
-            </button>
+                <button class="btn btn-success text-light" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNav">
+                    ☰
+                </button>
             </div>
             <div class="col-12 col-md-4">
                 <article class="p-3">
                     <h2>Selamat Datang di Minecraft</h2>
-                    <p>Minecraft adalah sebuah permainan sandbox yang memungkinkan pemain untuk membangun dan menjelajahi dunia virtual yang terbuat dari blok-blok. Dengan kreativitas tanpa batas, pemain dapat membuat bangunan, menjelajah, bertahan hidup, dan berpetualang di dunia yang dihasilkan secara acak. Game ini sangat populer di berbagai kalangan usia karena kebebasan dan fitur-fiturnya yang menarik.</p>
+                    <p>Minecraft adalah sebuah permainan sandbox yang memungkinkan pemain untuk membangun dan
+                        menjelajahi dunia virtual yang terbuat dari blok-blok. Dengan kreativitas tanpa batas, pemain
+                        dapat membuat bangunan, menjelajah, bertahan hidup, dan berpetualang di dunia yang dihasilkan
+                        secara acak. Game ini sangat populer di berbagai kalangan usia karena kebebasan dan
+                        fitur-fiturnya yang menarik.</p>
                     <figure class="figure mt-2 p-2">
                         <img src="logo-mojang.jpg" alt="Minecraft Screenshot" class="img-fluid rounded"
                             style="max-height: 350px; width: 100%;">
@@ -55,26 +130,211 @@
             </div>
             <div class="col-12 col-md-7">
                 <div class="p-3">
-                    <img src="wallpaper_minecraft_caves_cliffs(part2)_1920x1080.png" alt="logo-mojang" class="img-fluid rounded shadow-sm" style="max-height: 350px;">
+                    <img src="wallpaper_minecraft_caves_cliffs(part2)_1920x1080.png" alt="logo-mojang"
+                        class="img-fluid rounded shadow-sm" style="max-height: 350px;">
                 </div>
                 <div class="p-3">
                     <p>
-                        Minecraft adalah sebuah permainan video sandbox yang dikembangkan oleh Mojang Studios. Game ini pertama kali dirilis pada tahun 2011 dan sejak itu menjadi salah satu game terpopuler di dunia. Dalam Minecraft, pemain dapat menjelajahi dunia yang luas dan terbuka, yang terdiri dari blok-blok tiga dimensi yang dapat dihancurkan, dipindahkan, dan digunakan untuk membangun berbagai struktur. Tidak ada tujuan utama yang harus dicapai, sehingga pemain bebas berkreasi, bertahan hidup, atau berpetualang sesuai keinginan mereka.
+                        Minecraft adalah sebuah permainan video sandbox yang dikembangkan oleh Mojang Studios. Game ini
+                        pertama kali dirilis pada tahun 2011 dan sejak itu menjadi salah satu game terpopuler di dunia.
+                        Dalam Minecraft, pemain dapat menjelajahi dunia yang luas dan terbuka, yang terdiri dari
+                        blok-blok tiga dimensi yang dapat dihancurkan, dipindahkan, dan digunakan untuk membangun
+                        berbagai struktur. Tidak ada tujuan utama yang harus dicapai, sehingga pemain bebas berkreasi,
+                        bertahan hidup, atau berpetualang sesuai keinginan mereka.
 
-                        Minecraft menawarkan beberapa mode permainan, seperti Survival, di mana pemain harus mengumpulkan sumber daya, menjaga kesehatan, dan bertahan dari serangan monster; dan Creative, yang memberikan kebebasan penuh untuk membangun tanpa batasan sumber daya atau ancaman. Selain itu, terdapat juga mode Adventure dan Spectator yang menambah variasi pengalaman bermain.
+                        Minecraft menawarkan beberapa mode permainan, seperti Survival, di mana pemain harus
+                        mengumpulkan sumber daya, menjaga kesehatan, dan bertahan dari serangan monster; dan Creative,
+                        yang memberikan kebebasan penuh untuk membangun tanpa batasan sumber daya atau ancaman. Selain
+                        itu, terdapat juga mode Adventure dan Spectator yang menambah variasi pengalaman bermain.
 
-                        Salah satu daya tarik utama Minecraft adalah komunitasnya yang aktif, yang sering membuat modifikasi (mod), peta, dan server khusus dengan berbagai tema dan aturan. Game ini juga mendukung permainan multipemain, sehingga pemain dapat berkolaborasi atau bersaing dengan teman-teman mereka. Dengan grafis yang sederhana namun khas, serta gameplay yang fleksibel, Minecraft berhasil menarik perhatian jutaan pemain dari berbagai usia di seluruh dunia.
+                        Salah satu daya tarik utama Minecraft adalah komunitasnya yang aktif, yang sering membuat
+                        modifikasi (mod), peta, dan server khusus dengan berbagai tema dan aturan. Game ini juga
+                        mendukung permainan multipemain, sehingga pemain dapat berkolaborasi atau bersaing dengan
+                        teman-teman mereka. Dengan grafis yang sederhana namun khas, serta gameplay yang fleksibel,
+                        Minecraft berhasil menarik perhatian jutaan pemain dari berbagai usia di seluruh dunia.
                     </p>
                 </div>
             </div>
         </div>
+        <section class="bg-success py-5 shadow-lg" id="download">
+            <div class="container">
+                <div class="row g-2 justify-content-center">
+                    <h3 class="text-light text-center"
+                        style="margin: 0 0 30px 0; font-size: 23px;  font-family: 'Press Start 2P', cursive;">All
+                        Versions of
+                        Minecraft</h3>
+                    <!-- Mc jawa-->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card bg-dark text-white mx-auto shadow-lg h-100">
+                            <div class="card-body text-center">
+                                <img src="mcjava.png" alt="Minecraft Icon"
+                                    style="height: 180px; width: auto; border-radius: 3%;" class="mb-4">
+                                <h3 class="card-title mb-4">Minecraft Launcher</h3>
+                                <p class="card-text small text-light " style="--bs-text-opacity: .7;">Sandbox,
+                                    Adventure, Singleplayer +
+                                    Multipayer.</p>
+                                <hr>
+                                <a href="https://www.minecraft.net/en-us/download"
+                                    class="btn bg-success btn-lg hover-scale"
+                                    style="width: 90%; border-radius: 0; font-family: 'Press Start 2P', cursive; font-size: medium;">Download
+                                    Now</a>
+                                <p class="card-text small text-light "
+                                    style="--bs-text-opacity: .6; margin-top: 5px; letter-spacing: 2px;">
+                                    <i class="fab fa-xbox"></i>
+                                    <i class="fab fa-windows"></i>
+                                    <i class="fab fa-playstation"></i>
+                                    <i class="fas fa-mobile-alt"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mc lejen-->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card bg-dark text-white mx-auto shadow-lg h-100">
+                            <div class="card-body text-center">
+                                <img src="legenda.jpg" alt="Minecraft Bedrock Icon"
+                                    style="height: 180px; width: auto; border-radius: 3%;" class="mb-4">
+                                <h3 class="card-title mb-4">Minecraft Legends</h3>
+                                <p class="card-text small text-light " style="--bs-text-opacity: .7;">Strategy,
+                                    Adventure, Action,
+                                    Singleplayer + Multipayer</p>
+                                <hr>
+                                <a href="https://www.minecraft.net/en-us/download"
+                                    class="btn bg-success btn-lg hover-scale"
+                                    style="width: 90%; border-radius: 0;  font-family: 'Press Start 2P', cursive; font-size: medium;">Download
+                                    Now</a>
+                                <p class="card-text small text-light "
+                                    style="--bs-text-opacity: .6; letter-spacing: 2px; margin-top: 5px;">
+                                    <i class="fab fa-xbox"></i>
+                                    <i class="fab fa-windows"></i>
+                                    <i class="fab fa-playstation"></i>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mc danjen-->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card bg-dark text-white mx-auto shadow-lg h-100">
+                            <div class="card-body text-center">
+                                <img src="mcdungeon.jpg" alt="Minecraft Bedrock Icon"
+                                    style="height: 180px; width: auto; border-radius: 3%;" class="mb-4">
+                                <h3 class="card-title mb-4">Minecraft Dungeon</h3>
+                                <p class="card-text small text-light " style="--bs-text-opacity: .7;">Dungeon, Action,
+                                    Adventure,
+                                    Singleplayer + Multipayer</p>
+                                <hr>
+                                <a href="https://www.minecraft.net/en-us/download"
+                                    class="btn bg-success btn-lg hover-scale"
+                                    style="width: 90%; border-radius: 0; font-family: 'Press Start 2P', cursive; font-size: medium;">Download
+                                    Now</a>
+                                <p class="card-text small text-light "
+                                    style="--bs-text-opacity: .6;  letter-spacing: 2px; margin-top: 5px;">
+                                    <i class="fab fa-xbox"></i>
+                                    <i class="fab fa-windows"></i>
+                                    <i class="fab fa-playstation"></i>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mc sinau-->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card bg-dark text-white mx-auto shadow-lg h-100">
+                            <div class="card-body text-center">
+                                <img src="mcsinau.jpg" alt="Minecraft Bedrock Icon"
+                                    style="height: 180px; width: auto; border-radius: 3%;" class="mb-4">
+                                <h3 class="card-title mb-4">Minecraft Education</h3>
+                                <p class="card-text small text-light " style="--bs-text-opacity: .7;">Education,
+                                    Sandbox, Singleplayer +
+                                    Multipayer.</p>
+                                <hr>
+
+                                <a href="https://www.minecraft.net/en-us/download"
+                                    class="btn bg-success btn-lg hover-scale hover-text-dark"
+                                    style="width: 90%; border-radius: 0; font-family: 'Press Start 2P', cursive; font-size: medium;">Download
+                                    Now</a>
+                                <p class="card-text small text-light "
+                                    style="--bs-text-opacity: .6; letter-spacing: 2px; margin-top: 5px;">
+                                    <i class="fab fa-xbox"></i>
+                                    <i class="fab fa-windows"></i>
+                                    <i class="fab fa-playstation"></i>
+                                    <i class="fas fa-mobile-alt"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="shadow-lg mt-5 mb-5" id="signin">
+            <div class="container">
+                <div class="row g-2 justify-content-center">
+                    <h3 class="text-warning text-center mb-1"
+                        style="margin: 0 0 30px 0; font-size: 23px; font-family: 'Press Start 2P', cursive;">Already
+                        Have Minecraft?
+                    </h3>
+                    <p class="card-text text-center mt-1 fs-4 text-light " style="--bs-text-opacity: .8;">Sign in to the
+                        Microsoft
+                        account that has purchased Minecraft</p>
+
+                    <form action="#" method="post" class="bg-dark p-4 rounded shadow-sm">
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <label for="username" class="form-label text-info">Username*</label>
+                                <input type="text" class="form-control" id="username" placeholder="Enter your username"
+                                    required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="password" class="form-label text-info">Password*</label>
+                                <input type="password" class="form-control" id="password"
+                                    placeholder="Enter your password" required>
+                            </div>
+                            <div class="mt-3 row g-3">
+                                <div class="col-12 col-md-6">
+                                    <p class="text-white">Don't have an account? <a class="text-white " href="#">Sign
+                                            Up</a></p>
+                                </div>
+                                <div class="col-12 col-md-6 d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-success hover-scale "
+                                        style="width: 140px;">Sign In</button>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="bg-success text-light text-center p-1 mt-auto sticky-bottom">
-        <small>Copyright &copyKelompok7</small>
+    <!-- footer -->
+    <footer class="bedrock bg-dark text-white text-center p-1 mt-5 sticky-bottom" style="font-family: 'Press Start 2P', cursive;">
+        <p class="mt-3">Copyright &copy; Kelompok 7 2025</p>
     </footer>
+    <script>
+        const navToggleBtn = document.getElementById('navToggleBtn');
+        const navToggleIcon = document.getElementById('navToggleIcon');
+        const navbarCollapse = document.getElementById('navbarNav');
 
-    
+        navbarCollapse.addEventListener('show.bs.collapse', () => {
+            navToggleIcon.innerHTML = '<img src="ceco.png" alt="▲" style="width: auto; height: 44px;">';
+        });
+
+        navbarCollapse.addEventListener('hide.bs.collapse', () => {
+            navToggleIcon.innerHTML = '<img src="chestclose.png" alt="▼" style="width: auto; height: 32px;">';
+        });
+    </script>
+
+
 </body>
 
 </html>
